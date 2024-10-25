@@ -18,6 +18,14 @@ The project I have been developing is a mechanics prototype for an RPG combat sy
 5. Dummy unit. A combat unit that only has the base component. It can be targetted by actions, but does not itself act.
 6. Undo action button. Testing element that undoes the effects of the last performed action in combat, and steps back the turn order.
 
+## Project Progression
+
+![](https://github.com/wibblus/RPGCombatTest/blob/main/READMEAssets/gantt.png)
+
+---
+
+# [Video Report Link](https://drive.google.com/file/d/11VWIQTQ9wmHZYqJG9_4K3ihOHm7SBmQx/view?usp=sharing)
+
 ---
 
 # Design Pattern Implementations
@@ -53,4 +61,3 @@ The UnitFactory objects are very simple, holding just the respective prefab refe
 The observer pattern is implemented in this project using Unity's Action event system. While also implemented inherently by the InputManager for button events, they are primarly used by the base Unit class. These events are invoked in different cases of the unit's health being changed, which is listened to by its ActionHandler and the UIManager. The ActionHandler is concerned with when the unit goes from death to life (between zero and non-zero health values), setting its ability to act in combat based on those changes. The UIManager listens for health changes of any kind, to update the displayed health counters on screen.
 
 With the Unity Action implementation, this design pattern is incredibly useful. It can help to consolidate a large variety of logic that would otherwise require many scattered variable checks in Update functions. Here, the Unit objects need not be concerned with how other objects need to react to its own changes.
-
